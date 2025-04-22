@@ -1,15 +1,38 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "llmprompts"
 version = "0.1.0"
-description = "Composable prompt-engineering toolkit with roles, contexts, templates, and accelerators"
+description = "Composable prompt‑engineering toolkit with roles, contexts, templates, and accelerators"
 readme = "README.md"
-authors = [{ name="Your Name", email="you@example.com" }]
-license = { text="Apache-2.0" }
-dependencies = ["openai>=0.27.0", "pydantic>=1.8.2"]
-dynamic = ["classifiers", "keywords"]
-[tool.setuptools.packages.find]
-where = ["src"]
+
+# Author and maintainer
+authors = [
+  { name = "Gowtham Rao", email = "rao@ohdsi.org" },
+]
+maintainers = [
+  { name = "Gowtham Rao", email = "rao@ohdsi.org" },
+]
+
+# License
+license = { text = "Apache-2.0" }
+
+# Dependencies
+dependencies = [
+  "openai>=0.27.0",
+  "pydantic>=1.8.2",
+]
+
+# Classifiers and keywords (optional but recommended)
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries",
+]
+keywords = ["LLM", "prompts", "prompt-engineering", "composable"]
+
+# Project URLs, including ORCID and homepage
+[project.urls]
+Homepage    = "https://github.com/Ohdsi/llmPrompts/"
+Documentation = "https://github.com/Ohdsi/llmPrompts/wiki"
+Changelog   = "https://github.com/Ohdsi/llmPrompts/releases"
+ORCID       = "https://orcid.org/0000-0002-4949-7236"
