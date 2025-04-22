@@ -13,3 +13,4 @@ Welcome to llmprompts documentation!
    connectors
    schemas
    utils
+   changelog
