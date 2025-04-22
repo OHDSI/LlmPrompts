@@ -118,3 +118,104 @@ def get_pharma_stakeholder_overview() -> str:
         "Constraint: Decisions must often balance competing stakeholder interests (e.g., payer cost concerns vs. patient access needs vs. regulatory safety requirements). Effective communication and evidence tailored to each stakeholder group are critical."
     )
 
+
+def get_cross_functional_collaboration_model() -> str:
+    """
+    Returns context on the necessity and nature of cross-functional teams in pharma.
+
+    Based on the pervasive need for integration across functions highlighted in roles
+    like Asset Team Lead and the interactions described for most other roles in the source document.
+    """
+    return (
+        "CONTEXT: CROSS-FUNCTIONAL COLLABORATION MODEL\n"
+        "Pharmaceutical asset development and commercialization inherently require intensive cross-functional collaboration.\n"
+        "Rationale: No single function possesses all the expertise (scientific, clinical, regulatory, manufacturing, market access, commercial) needed. Integrating these perspectives is vital for coherent strategy and execution.\n"
+        "Operating Model: Typically involves core teams (e.g., Asset Development Team, Launch Team) with representatives from key functions, often led by an integrator role (like Asset Team Lead).\n"
+        "Key Challenges: Aligning functional priorities, managing interdependencies, ensuring timely information flow, resolving conflicts between functional viewpoints (e.g., clinical desires vs. manufacturing constraints vs. commercial needs).\n"
+        "Objective: To create and execute a unified asset strategy that balances scientific rigor, regulatory requirements, manufacturing feasibility, patient needs, and commercial viability.\n"
+        "Constraint: Siloed operations or poor cross-functional alignment leads to strategic gaps, delays, suboptimal decisions, and potential failure to maximize asset value."
+    )
+
+def get_evidence_generation_strategy() -> str:
+    """
+    Returns context on the different types of evidence needed in pharma and their purpose.
+
+    Based on the activities described for roles focused on generating specific data
+    (Clinical Dev Lead - clinical trials; HEOR Lead - economic/outcomes data) and roles
+    that consume this data (Market Access, Marketing, Regulatory) in the source document.
+    """
+    return (
+        "CONTEXT: EVIDENCE GENERATION STRATEGY\n"
+        "Pharmaceutical success hinges on generating diverse types of credible evidence to meet the needs of various stakeholders.\n"
+        "Key Evidence Types:\n"
+        "- Clinical Trial Data (RCTs): Primary evidence for regulatory approval, demonstrating safety and efficacy in controlled settings. Essential for HCP confidence.\n"
+        "- Health Economics & Outcomes Research (HEOR): Evidence on cost-effectiveness, budget impact, and comparative effectiveness relative to alternatives. Crucial for payers and reimbursement decisions.\n"
+        "- Real-World Evidence (RWE): Data gathered outside clinical trials (e.g., registries, claims data) showing effectiveness, safety, and usage patterns in routine clinical practice. Increasingly important for regulators, payers, and HCPs.\n"
+        "- Patient-Reported Outcomes (PROs): Evidence on treatment impact from the patient's perspective (e.g., quality of life, symptom burden). Supports value demonstration to patients, HCPs, and payers.\n"
+        "Strategic Planning: Evidence generation must be planned early and integrated into the overall development strategy to ensure the right data is available at the right time for key decisions (regulatory submission, pricing/reimbursement negotiations, clinical guideline inclusion).\n"
+        "Constraint: Relying solely on traditional clinical trial data is often insufficient for market access and commercial success. A comprehensive evidence package addressing multiple stakeholder perspectives is required."
+    )
+
+def get_product_lifecycle_management_context() -> str:
+    """
+    Returns context on managing a pharmaceutical product after its initial approval.
+
+    Based on the Asset Team Lead's responsibility for 'lifecycle value' and the implied
+    need to manage products beyond launch mentioned in the source document.
+    """
+    return (
+        "CONTEXT: PRODUCT LIFECYCLE MANAGEMENT (LCM)\n"
+        "Managing a pharmaceutical product extends well beyond its initial launch and approval.\n"
+        "Objective: To maximize the value of the asset over its entire lifespan, adapting to changing market dynamics, competitive pressures, and evolving scientific understanding.\n"
+        "Key LCM Activities:\n"
+        "- Indication Expansion: Seeking regulatory approval for use in new patient populations or diseases.\n"
+        "- Formulation Development: Creating improved versions (e.g., easier dosing, extended release).\n"
+        "- Geographic Expansion: Launching the product in new countries/regions.\n"
+        "- Post-Marketing Studies: Fulfilling regulatory commitments, further exploring safety/efficacy, generating RWE.\n"
+        "- Intellectual Property Management: Defending patents and managing the transition during loss of exclusivity (LoE).\n"
+        "- Competitive Response: Adapting strategy based on new entrants or competitor data.\n"
+        "Strategic Importance: Effective LCM can significantly extend a product's commercial life and return on investment.\n"
+        "Constraint: LCM requires ongoing investment and strategic foresight. Failure to proactively manage the lifecycle can lead to premature decline in market share and revenue."
+    )
+
+def get_competitive_intelligence_context() -> str:
+    """
+    Returns context on the role of competitive intelligence in pharma strategy.
+
+    Based on the need for roles like Marketing Lead and Asset Team Lead to understand
+    the market and position their asset effectively, as implied in the source document.
+    """
+    return (
+        "CONTEXT: COMPETITIVE INTELLIGENCE (CI) IN PHARMA\n"
+        "The pharmaceutical market is highly competitive, making CI a critical input for strategic decision-making.\n"
+        "Purpose: To systematically gather, analyze, and disseminate information about the external environment, particularly competitors, to inform development and commercial strategies.\n"
+        "Focus Areas:\n"
+        "- Competitor Pipelines: Monitoring drugs in development (mechanisms, targets, clinical trial progress, timelines).\n"
+        "- Competitor Data: Analyzing published/presented clinical trial results, RWE, and regulatory interactions.\n"
+        "- Competitor Strategy: Understanding their commercial positioning, pricing, market access approaches, and lifecycle plans.\n"
+        "- Market Dynamics: Tracking therapeutic area trends, evolving standards of care, and unmet needs.\n"
+        "Application: CI informs Target Product Profile definition, clinical trial design (e.g., comparator choice), forecasting, positioning, messaging, and overall asset strategy.\n"
+        "Constraint: Operating without robust CI leads to reactive strategies, potential mispositioning, and failure to anticipate market shifts or competitive threats. Ethical and legal boundaries must be strictly observed in gathering CI."
+    )
+
+def get_medical_affairs_function_context() -> str:
+    """
+    Returns context on the distinct role and purpose of the Medical Affairs function.
+
+    Based on mentions of Medical Affairs as a key collaborator for HEOR, Marketing,
+    and other functions in the source document, highlighting its bridging role.
+    """
+    return (
+        "CONTEXT: MEDICAL AFFAIRS FUNCTION\n"
+        "Medical Affairs is a distinct function within pharmaceutical companies, bridging clinical development and commercial operations.\n"
+        "Core Purpose: To communicate complex scientific and clinical information accurately and non-promotionally to the medical community, gather insights, and support appropriate product use.\n"
+        "Key Activities:\n"
+        "- KOL Engagement: Building relationships with Key Opinion Leaders for scientific exchange and insights.\n"
+        "- Scientific Communication: Presenting data at medical congresses, publishing manuscripts, developing medical information resources.\n"
+        "- Medical Education: Supporting independent medical education initiatives.\n"
+        "- Evidence Generation Support: Supporting investigator-initiated studies (IIS) and contributing to RWE generation plans.\n"
+        "- Internal Expertise: Providing medical/scientific expertise to internal teams (e.g., Commercial, Market Access).\n"
+        "Distinction from Commercial: Medical Affairs operates with scientific objectivity and avoids direct product promotion. Its interactions are focused on scientific exchange, not sales.\n"
+        "Constraint: Must operate within strict compliance guidelines (e.g., separating scientific exchange from promotional activities) to maintain credibility with the medical community and regulators."
+    )
+
