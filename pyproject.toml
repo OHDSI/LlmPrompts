@@ -1,7 +1,11 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "llmprompts"
 version = "0.1.0"
-description = "Composable prompt‑engineering toolkit with roles, contexts, templates, and accelerators"
+description = "Composable prompt-engineering toolkit with roles, contexts, templates, and accelerators"
 readme = "README.md"
 
 # Author and maintainer
@@ -21,7 +25,7 @@ dependencies = [
   "pydantic>=1.8.2",
 ]
 
-# Classifiers and keywords (optional but recommended)
+# Classifiers and keywords
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: Apache Software License",
@@ -30,9 +34,9 @@ classifiers = [
 ]
 keywords = ["LLM", "prompts", "prompt-engineering", "composable"]
 
-# Project URLs, including ORCID and homepage
 [project.urls]
-Homepage    = "https://github.com/Ohdsi/llmPrompts/"
+Homepage = "https://github.com/Ohdsi/llmPrompts/"
 Documentation = "https://github.com/Ohdsi/llmPrompts/wiki"
-Changelog   = "https://github.com/Ohdsi/llmPrompts/releases"
-ORCID       = "https://orcid.org/0000-0002-4949-7236"
+
+[tool.setuptools.packages.find]
+where = ["src"]
