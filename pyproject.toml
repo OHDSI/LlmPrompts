@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llmprompts"
+version = "0.1.0"
+description = "Composable prompt-engineering toolkit with roles, contexts, templates, and accelerators"
+readme = "README.md"
+authors = [{ name="Your Name", email="you@example.com" }]
+license = { text="Apache-2.0" }
+dependencies = ["openai>=0.27.0", "pydantic>=1.8.2"]
+dynamic = ["classifiers", "keywords"]
+[tool.setuptools.packages.find]
+where = ["src"]
