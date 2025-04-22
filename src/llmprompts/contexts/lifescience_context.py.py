@@ -9,15 +9,14 @@ standard pharma roles.
 
 The context provided here focuses on the 'what' and 'why' of the environment,
 complementing the 'who' and 'how' defined in the 'roles' subpackage.
-It is derived from information and concepts present in the 'LS Personas - Pharmacompany roles' document.
 """
 
 def get_drug_development_overview() -> str:
     """
     Returns context on the typical drug development lifecycle in pharma.
 
-    Based on concepts like phases, milestones, TPP referenced across roles
-    (e.g., Asset Team Lead, Clinical Development Lead) in the source document.
+    Based on concepts like phases, milestones, TPP across roles
+    (e.g., Asset Team Lead, Clinical Development Lead).
     """
     return (
         "CONTEXT: DRUG DEVELOPMENT LIFECYCLE\n"
@@ -38,9 +37,8 @@ def get_regulatory_basics() -> str:
     """
     Returns context on the role and function of regulatory agencies in pharma.
 
-    Based on mentions of regulatory bodies, submissions (NDA), and the need for
-    compliance and strategic interaction (e.g., Regulatory Manager, Asset Team Lead)
-    in the source document.
+    Based on concepts like regulatory bodies, submissions (NDA), and the need for
+    compliance and strategic interaction (e.g., Regulatory Manager, Asset Team Lead).
     """
     return (
         "CONTEXT: PHARMACEUTICAL REGULATORY ENVIRONMENT\n"
@@ -60,8 +58,7 @@ def get_gxp_context() -> str:
     Returns context on the importance of GxP quality guidelines.
 
     Based on the implied need for quality, data integrity, and standardized practices
-    underpinning clinical trials, manufacturing, and regulatory submissions mentioned
-    across various roles (Clinical Dev, Regulatory, Asset Lead) in the source document.
+    underpinning clinical trials, manufacturing, and regulatory submissions.
     """
     return (
         "CONTEXT: GXP QUALITY SYSTEMS\n"
@@ -81,8 +78,7 @@ def get_commercialization_concepts() -> str:
     Returns context on pharmaceutical commercialization, market access, and value demonstration.
 
     Based on concepts like commercial strategy, market access, payers, HEOR, branding,
-    and launch mentioned in relevant roles (Marketing, Market Access, HEOR, Asset Lead)
-    in the source document.
+    and launch mentioned in relevant roles (Marketing, Market Access, HEOR, Asset Lead).
     """
     return (
         "CONTEXT: PHARMACEUTICAL COMMERCIALIZATION & MARKET ACCESS\n"
@@ -101,9 +97,9 @@ def get_pharma_stakeholder_overview() -> str:
     """
     Returns context on the key stakeholders influencing pharmaceutical development and commercialization.
 
-    Based on the various internal and external groups mentioned or implied across
+    Based on the various internal and external groups across
     multiple persona descriptions (e.g., interactions with regulators, payers, HCPs,
-    KOLs, internal teams) in the source document.
+    KOLs, internal teams).
     """
     return (
         "CONTEXT: KEY PHARMACEUTICAL STAKEHOLDERS\n"
@@ -124,7 +120,7 @@ def get_cross_functional_collaboration_model() -> str:
     Returns context on the necessity and nature of cross-functional teams in pharma.
 
     Based on the pervasive need for integration across functions highlighted in roles
-    like Asset Team Lead and the interactions described for most other roles in the source document.
+    like Asset Team Lead and the interactions described for most other roles.
     """
     return (
         "CONTEXT: CROSS-FUNCTIONAL COLLABORATION MODEL\n"
@@ -142,7 +138,7 @@ def get_evidence_generation_strategy() -> str:
 
     Based on the activities described for roles focused on generating specific data
     (Clinical Dev Lead - clinical trials; HEOR Lead - economic/outcomes data) and roles
-    that consume this data (Market Access, Marketing, Regulatory) in the source document.
+    that consume this data (Market Access, Marketing, Regulatory).
     """
     return (
         "CONTEXT: EVIDENCE GENERATION STRATEGY\n"
@@ -161,7 +157,7 @@ def get_product_lifecycle_management_context() -> str:
     Returns context on managing a pharmaceutical product after its initial approval.
 
     Based on the Asset Team Lead's responsibility for 'lifecycle value' and the implied
-    need to manage products beyond launch mentioned in the source document.
+    need to manage products beyond launch.
     """
     return (
         "CONTEXT: PRODUCT LIFECYCLE MANAGEMENT (LCM)\n"
@@ -183,7 +179,7 @@ def get_competitive_intelligence_context() -> str:
     Returns context on the role of competitive intelligence in pharma strategy.
 
     Based on the need for roles like Marketing Lead and Asset Team Lead to understand
-    the market and position their asset effectively, as implied in the source document.
+    the market and position their asset effectively.
     """
     return (
         "CONTEXT: COMPETITIVE INTELLIGENCE (CI) IN PHARMA\n"
@@ -203,7 +199,7 @@ def get_medical_affairs_function_context() -> str:
     Returns context on the distinct role and purpose of the Medical Affairs function.
 
     Based on mentions of Medical Affairs as a key collaborator for HEOR, Marketing,
-    and other functions in the source document, highlighting its bridging role.
+    and other functions, highlighting its bridging role.
     """
     return (
         "CONTEXT: MEDICAL AFFAIRS FUNCTION\n"
