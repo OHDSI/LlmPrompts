@@ -1,7 +1,7 @@
 """OHDSI llm_prompt_builders package root."""
 
 # ---- static string so Hatchling can read the version -----------------------
-__version__ = "0.1.2"               # ⬅️  bump for each release
+__version__ = "0.1.3"               # ⬅️  bump for each release
 # ---------------------------------------------------------------------------
 
 from importlib.metadata import version, PackageNotFoundError
