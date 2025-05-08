@@ -36,10 +36,10 @@ jobs:
       - name: Run tests
         run: hatch run test:pytest --cov=llm_prompt_builders --cov-report=xml:coverage.xml
 
-      - name: Upload coverage
-        if: success()
-        uses: codecov/codecov-action@v4
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5           # upgrade from v4 → v5
         with:
-          files: ./coverage.xml          # must match path above
+          token: ${{ secrets.CODECOV_TOKEN }}     # add this line
+          files: ./coverage.xml
           fail_ci_if_error: true
-          token: ${{ secrets.CODECOV_TOKEN }}   # add this repo/org secret
+          verbose: true                          # optional but handy

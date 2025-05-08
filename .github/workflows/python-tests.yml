@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write
+      contents: read
+
     strategy:
       fail-fast: false
       matrix:
@@ -29,11 +33,11 @@ jobs:
 
     - name: Run unit tests
       run: |
-        pytest -ra --cov=searchpubmed --cov-report=xml
+        pytest -ra --cov=llm_prompt_builders --cov-report=xml
 
     # ---- OPTIONAL: upload coverage ----
     - name: Upload coverage to Codecov
-      if: github.repository_owner == 'OHDSI'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
-        file: ./coverage.xml
+        use_oidc: true
+        files: ./coverage.xml

@@ -1,0 +1,12 @@
+# mkdocs.yml  – keep it in the top-level directory
+site_name: LlmPromptBuilders
+site_url: https://ohdsi.github.io/LlmPromptBuilders   # change if you publish elsewhere
+repo_url: https://github.com/OHDSI/LlmPromptBuilders
+repo_name: OHDSI/LlmPromptBuilders
+
+docs_dir: docs        # you already have a docs/ folder
+theme:
+  name: material      # the popular default; pick any MkDocs theme
+
+nav:
+  - Home: index.md    # add more pages here over time
