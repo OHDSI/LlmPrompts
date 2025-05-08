@@ -1,0 +1,22 @@
+name: Deploy docs to GitHub Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:                     # -- your “deploy” job header
+    needs: build              #   (only if you have a separate build job)
+    runs-on: ubuntu-latest
+
+    # ✅ **add these 3-4 lines**
+    environment:
+      name: github-pages      # the name GitHub Pages expects
+      url:  ${{ steps.deployment.outputs.page_url }}   # optional but nice
+
+    permissions:              # keep or add the required perms
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
