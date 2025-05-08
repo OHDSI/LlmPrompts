@@ -1,0 +1,117 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Build system (PEP 517/518)
+# ──────────────────────────────────────────────────────────────────────────────
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.envs.test]      # ← name it whatever you like
+features     = ["dev"]      # installs the [project.optional-dependencies].dev  extra
+template      = "default"   # (implicit, but keep for clarity)
+dependencies = [
+    "pytest>=8",
+    "pytest-cov",
+]
+
+[tool.hatch.envs.test.scripts]
+cov = "pytest --cov=LlmPrompts --cov-report=xml {args}"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Core project metadata (PEP 621)
+# ──────────────────────────────────────────────────────────────────────────────
+[project]
+name            = "llmprompts"
+dynamic         = ["version"]                     # read from src/llmprompts/__init__.py
+description     = "Composable prompt-engineering toolkit with roles, contexts, templates, and accelerators"
+readme          = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license         = { file = "LICENSE" }
+
+authors = [
+    { name = "Gowtham Rao", email = "rao@ohdsi.org" },
+]
+maintainers = [
+    { name = "Gowtham Rao", email = "rao@ohdsi.org" },
+]
+
+dependencies = [
+    "openai>=0.27.0",
+    "pydantic>=1.8.2",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries",
+]
+
+keywords = ["LLM", "prompts", "prompt-engineering", "composable"]
+
+[project.urls]
+Homepage      = "https://github.com/OHDSI/LlmPrompts/"
+Documentation = "https://github.com/OHDSI/LlmPrompts/wiki"
+Source        = "https://github.com/OHDSI/LlmPrompts"
+Tracker       = "https://github.com/OHDSI/LlmPrompts/issues"
+
+# Console entry-points
+[project.scripts]
+llmprompts              = "llmprompts.cli:main"
+llmprompts-build-site   = "llmprompts.cli.build_site:render"
+
+# Optional extras
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1",
+    "pytest-cov",
+    "coverage[toml]",
+    "ruff",
+    "black",
+    "pre-commit",
+]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Hatchling specifics
+# ──────────────────────────────────────────────────────────────────────────────
+[tool.hatch.version]
+path = "src/llmprompts/__init__.py"          # __version__ lives here
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/.github", "/.pre-commit-config.yaml"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llmprompts"]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Packaging layout (mirrors your old setuptools-find)
+# ──────────────────────────────────────────────────────────────────────────────
+[tool.hatch.metadata]
+allow-direct-references = true               # keep local path deps if ever used
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Test runner / paths
+# ──────────────────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+addopts    = "-q"
+testpaths  = ["tests"]
+pythonpath = ["src"]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Dev-tool configurations (copied from original)
+# ──────────────────────────────────────────────────────────────────────────────
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310"]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore   = ["E203", "W503"]
+
+[tool.ruff]
+line-length = 88
