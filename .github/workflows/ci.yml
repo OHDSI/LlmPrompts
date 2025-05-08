@@ -1,0 +1,45 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Hatch
+        run: pip install --upgrade hatch
+
+      # (Optional) cache Hatch env to speed up installs
+      - name: Cache Hatch env
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/hatch
+          key: hatch-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: hatch-${{ runner.os }}-py${{ matrix.python-version }}-
+
+      - name: Run tests
+        run: hatch run test:pytest --cov=llm_prompt_builders --cov-report=xml:coverage.xml
+
+      - name: Upload coverage
+        if: success()
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml          # must match path above
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}   # add this repo/org secret
