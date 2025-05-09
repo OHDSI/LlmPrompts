@@ -1,0 +1,5 @@
+pip install -e .
+python generate_docs.py     # from the repo root
+git add docs/index.html
+git commit -m "Auto-generated docs"
+git push
