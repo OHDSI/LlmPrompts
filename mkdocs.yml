@@ -7,6 +7,3 @@ repo_name: OHDSI/LlmPromptBuilders
 docs_dir: docs        # you already have a docs/ folder
 theme:
   name: material      # the popular default; pick any MkDocs theme
-
-nav:
-  - Home: index.md    # add more pages here over time

@@ -1,0 +1,24 @@
+name: Deploy docs
+
+on:
+  push:
+    branches: [ main ]   # or whatever your default branch is
+  workflow_dispatch:      # manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # required for gh-deploy to push to gh-pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install MkDocs + theme
+        run: pip install mkdocs-material
+
+      - name: Build & publish
+        run: mkdocs gh-deploy --force --clean
